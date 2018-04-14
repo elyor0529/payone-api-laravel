@@ -2,9 +2,10 @@
 
 namespace Payone\Laravel;
 
+use Illuminate\Support\ServiceProvider;
 use Payone\PayoneClient;
 
-class PayoneServiceProvider
+class PayoneServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.

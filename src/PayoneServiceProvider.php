@@ -2,6 +2,7 @@
 
 namespace Payone\Laravel;
 
+use Illuminate\Contracts\Container\Container;
 use Illuminate\Support\ServiceProvider;
 use Payone\PayoneClient;
 
@@ -30,7 +31,7 @@ class PayoneServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton('payone', function ($app) {
+        $this->app->singleton('payone.api.client', function ($app) {
 
             $client = new PayoneClient();
 
@@ -46,6 +47,13 @@ class PayoneServiceProvider extends ServiceProvider
             return $client;
         });
 
-        $this->app->alias('payone', PayoneClient::class);
+        $this->app->alias('payone.api.client', PayoneClient::class);
+
+
+        $this->app->singleton('payone', function (Container $app) {
+            return new PayoneManager($app);
+        });
+
+        $this->app->alias('payone', PayoneManager::class);
     }
 }

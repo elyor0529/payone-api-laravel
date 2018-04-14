@@ -45,5 +45,7 @@ class PayoneServiceProvider extends ServiceProvider
 
             return $client;
         });
+
+        $this->app->alias('payone', PayoneClient::class);
     }
 }

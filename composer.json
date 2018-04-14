@@ -1,0 +1,22 @@
+{
+  "name": "bengthagemeister/payone-api-laravel",
+  "license": "GPL-3.0-or-later",
+  "authors": [
+    {
+      "name": "Bengt Hagemeister",
+      "email": "bengt@localticketing.de"
+    }
+  ],
+  "require": {
+    "bengthagemeister/payone-api-php": "*",
+    "illuminate/contracts": "^5.6",
+    "illuminate/support": "^5.6"
+  },
+  "autoload": {
+    "psr-4": {
+      "Payone\\Laravel\\": "src/"
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}

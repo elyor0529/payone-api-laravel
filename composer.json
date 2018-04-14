@@ -18,5 +18,15 @@
     }
   },
   "minimum-stability": "dev",
-  "prefer-stable": true
+  "prefer-stable": true,
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Payone\\Laravel\\PayoneServiceProvider"
+      ],
+      "aliases": {
+        "Debugbar": "Barryvdh\\Debugbar\\Facade"
+      }
+    }
+  }
 }

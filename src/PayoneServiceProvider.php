@@ -29,18 +29,20 @@ class PayoneServiceProvider
      */
     public function register()
     {
-        $this->app->singleton('payone', function () {
+        $this->app->singleton('payone', function ($app) {
 
             $client = new PayoneClient();
 
-            $client->setMid(1234)
-                ->setPortalId(1234)
-                ->setAid(1234)
-                ->setKey('1234');
+            $client->setApiEndpoint($app['config']['api_endpoint'])
+                ->setApiVersion($app['config']['api_version'])
+                ->setEncoding($app['config']['encoding'])
+                ->setMid($app['config']['mid'])
+                ->setAid($app['config']['aid'])
+                ->setPortalId($app['config']['portalId'])
+                ->setKey($app['config']['key'])
+                ->setMode($app['config']['mode']);
 
             return $client;
         });
-
-        $this->app->alias('payone', PayoneClient::class);
     }
 }

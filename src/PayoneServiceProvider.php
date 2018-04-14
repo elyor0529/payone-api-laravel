@@ -35,14 +35,14 @@ class PayoneServiceProvider extends ServiceProvider
 
             $client = new PayoneClient();
 
-            $client->setApiEndpoint($app['config']['api_endpoint'])
-                ->setApiVersion($app['config']['api_version'])
-                ->setEncoding($app['config']['encoding'])
-                ->setMid($app['config']['mid'])
-                ->setAid($app['config']['aid'])
-                ->setPortalId($app['config']['portalId'])
-                ->setKey($app['config']['key'])
-                ->setMode($app['config']['mode']);
+            $client->setApiEndpoint(config('payone.api_endpoint'))
+                ->setApiVersion(config('payone.api_version'))
+                ->setEncoding(config('payone.encoding'))
+                ->setMid(config('payone.mid'))
+                ->setAid(config('payone.aid'))
+                ->setPortalId(config('payone.portalId'))
+                ->setKey(config('payone.key'))
+                ->setMode(config('payone.mode'));
 
             return $client;
         });

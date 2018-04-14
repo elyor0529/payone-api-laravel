@@ -25,7 +25,7 @@
         "Payone\\Laravel\\PayoneServiceProvider"
       ],
       "aliases": {
-        "Debugbar": "Barryvdh\\Debugbar\\Facade"
+        "Payone": "Payone\\Laravel\\Facades\\Payone"
       }
     }
   }

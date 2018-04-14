@@ -1,6 +1,6 @@
 <?php
 
-namespace Payone\Laravel\Fascades;
+namespace Payone\Laravel\Facades;
 
 
 use Illuminate\Support\Facades\Facade;
